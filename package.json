@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "node output/index.js",
+    "start": "node .output/index.js",
     "build": "rimraf ./.output && tsc",
     "dev": "ts-node ./src/index.ts",
     "devServer": "nodemon ./dev/index.ts",
