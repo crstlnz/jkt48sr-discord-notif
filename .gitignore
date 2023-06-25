@@ -1,0 +1,14 @@
+node_modules
+*.log*
+.cache
+.output
+.env
+dist
+.vscode
+.vscode/*
+dev/*
+dev
+.editorconfig
+.eslintcache
+ecosystem.config.js
+key/*
