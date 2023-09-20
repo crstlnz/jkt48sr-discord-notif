@@ -6,10 +6,9 @@ class Watcher extends WatcherData {
   }
 
   async init() {
-    const lastRecord = this.recordDates[this.recordDates.length - 1]?.to ?? null
-    await this.giftLog.update(lastRecord).catch(console.error)
     await this.giftList.update().catch(console.error)
-    await this.comments.update(lastRecord).catch(console.error)
+    await this.giftLog.update().catch(console.error)
+    await this.comments.update().catch(console.error)
     await this.messages.init().catch(console.error)
     this.socket.create()
     this.socket.on('finish', () => {

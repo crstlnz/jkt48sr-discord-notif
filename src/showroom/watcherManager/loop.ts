@@ -1,7 +1,7 @@
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
 import config from '@root/src/config'
-import {  getOnlives } from '../api'
+import { getOnlives } from '../api'
 import member from '../../assets/member.json'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions

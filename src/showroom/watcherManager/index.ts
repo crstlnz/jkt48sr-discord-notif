@@ -53,8 +53,8 @@ class ShowroomWatcherManager extends Collection<string | number, Watcher> {
 
   async addWatcher(watcher: Watcher) {
     this.set(watcher.id, watcher)
-    this.messages.add(watcher)
     await watcher.init()
+    this.messages.add(watcher)
   }
 
   deleteWatcher(data: Watcher | number) {
