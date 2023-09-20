@@ -27,7 +27,7 @@ const config: ShowroomWatcherOptions = {
         .setDescription(`Total Gift : \`${giftData?.total ?? 0}\`\n\`\`\`${giftData?.users || 'No gift right now'}\`\`\``)
         .setImage(watcher.image)
         .setColor(liveColor)
-        .setFooter({ text: 'Showroom Gift Counter', iconURL: 'https://www.showroom-live.com/favicon.ico' })
+        .setFooter({ text: 'Showroom Gift Counter', iconURL: 'https://play-lh.googleusercontent.com/AKKnVMfKzyuPK2QLY3WDhhfBKyhW8nq5KjYARLcDgcub4ue5B9RSBzjv4-nU5EA1debu' })
         .setURL(`https://www.showroom-live.com/${watcher.roomKey}`)
     },
     live_end: (watcher: WatcherData): EmbedBuilder => {
@@ -40,7 +40,7 @@ const config: ShowroomWatcherOptions = {
         .setImage(watcher.image)
         .setColor(finishColor)
         .setTimestamp(new Date().getTime())
-        .setFooter({ text: 'Showroom', iconURL: 'https://www.showroom-live.com/favicon.ico' })
+        .setFooter({ text: 'Showroom', iconURL: 'https://play-lh.googleusercontent.com/AKKnVMfKzyuPK2QLY3WDhhfBKyhW8nq5KjYARLcDgcub4ue5B9RSBzjv4-nU5EA1debu' })
         .setURL(`https://www.showroom-live.com/${watcher.roomKey}`)
     }
   }
