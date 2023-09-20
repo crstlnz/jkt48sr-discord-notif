@@ -1,7 +1,7 @@
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
 import config from '@root/src/config'
-import { getAllFollows, getIsLive, getOnlives } from '../api'
+import {  getOnlives } from '../api'
 import member from '../../assets/member.json'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -75,7 +75,7 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
 
     // FETCH
     try {
-      await this.checkBackup()
+      await this.checkLive()
       this.success()
     }
     catch (e) {
@@ -94,44 +94,7 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
     }, this.interval)
   }
 
-  async check() {
-    // new api
-    if (!this.showroomList.length) return
-    const data = await getAllFollows()
-    const rooms = new Map<number, ShowroomAPI.RoomFollow>()
-    for (const sr of data) rooms.set(Number(sr.room_id), sr)
-
-    const missing: Watcher.Member[] = []
-    const result = []
-    for (const sr of this.showroomList) {
-      if (!rooms.has(sr.id) && sr.roomExists && sr.isActive) {
-        missing.push(sr)
-      }
-      else {
-        const room = rooms.get(sr.id)
-        if (room?.is_online && sr.isActive) result.push(sr)
-      }
-    }
-    if (missing?.length) {
-      console.log('Missing', missing.length, 'room!')
-      console.log(missing)
-      const promises = missing.map(async (room) => {
-        return {
-          room,
-          is_live: await getIsLive(room.id).catch(_ => false)
-        }
-      })
-
-      const res = await Promise.all(promises)
-      for (const data of res) {
-        if (data.is_live) result.push(data.room)
-      }
-    }
-    if (result?.length) this.emit('live', result)
-    if (missing?.length) throw new Error(`Missing ${missing.length} member! (${missing.join(', ')})`)
-  }
-
-  async checkBackup() {
+  async checkLive() {
     // old api
     if (!this.showroomList.length) return
     const data = await getOnlives()

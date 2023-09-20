@@ -1,25 +1,5 @@
 const cookies = `sr_id=${process.env.SR_ID};`
 
-export async function getFollows(page = 1): Promise<ShowroomAPI.Follow> {
-  const count = 100
-  const url = `https://www.showroom-live.com/api/follow/rooms?page=${page}&count=${count}&_=${new Date().getTime()}`
-  const res = await fetch(url, { headers: { cookie: cookies } })
-  if (!res.ok) throw new Error('Fetch failed!')
-  const data = await res.json()
-  if (!('rooms' in data && 'next_page' in data && 'total_entries' in data && 'last_page' in data)) console.warn('Follow Api changes in some fields')
-  if (!Array.isArray(data.rooms)) throw new TypeError('API Error!')
-  checkRoomsFollow(data?.room)
-  return data
-}
-
-export async function getAllFollows(result: ShowroomAPI.RoomFollow[] = [], page = 1): Promise<ShowroomAPI.RoomFollow[]> {
-  const data = await getFollows(page)
-  result.push(...data.rooms)
-  if (data.current_page !== page) return result
-  if (data.next_page !== null) return await getAllFollows(result, data.next_page)
-  else { return result }
-}
-
 export async function getLives(): Promise<ShowroomAPI.FollowOnlives> {
   const url = `https://www.showroom-live.com/api/follow/onlives?_=${new Date().getTime()}`
   const res = await fetch(url, { headers: { cookies } })
