@@ -16,7 +16,7 @@ const config: ShowroomWatcherOptions = {
     no_activity_refresh: 60000
   },
   discord: {
-    channel_name: 'showroom',
+    channel_name: 'showroom', // if NODE_ENV=development channel name will be suffixed with "-dev"
     specific_guilds: []
   },
   message: {
@@ -35,7 +35,7 @@ const config: ShowroomWatcherOptions = {
       return new EmbedBuilder()
         .setTitle(watcher.name)
         .setDescription(
-          `Live ${watcher.name} telah selesai!` + `\nTotal Gifts : \`${giftData?.total ?? 0}\``
+          `Live ${watcher.name} is finished!` + `\nTotal Gifts : \`${giftData?.total ?? 0}\``
         )
         .setImage(watcher.image)
         .setColor(finishColor)
