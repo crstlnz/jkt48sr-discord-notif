@@ -16,6 +16,6 @@ $ npm build
 
 ```
 $ Change config in /src/config.ts
-$ Provide for discord token
+$ Provide DISCORD_TOKEN var on .env 
 $ npm start
 ```
