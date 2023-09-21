@@ -15,7 +15,8 @@ $ npm build
 
 
 ```
-$ Change config in /src/config.ts
-$ Provide DISCORD_TOKEN var on .env 
+$ Modify config for custom message and discord channel name on /src/config.ts
+$ Provide DISCORD_TOKEN on .env
+$ Add NODE_ENV=development for testing random live if no member live
 $ npm start
 ```
