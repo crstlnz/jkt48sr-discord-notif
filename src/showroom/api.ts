@@ -61,7 +61,7 @@ export async function getProfile(roomId: number | string): Promise<ShowroomAPI.R
 export async function getRoomStatus(roomKey: string): Promise<ShowroomAPI.RoomStatus> {
   const url = `https://www.showroom-live.com/api/room/status?room_url_key=${roomKey}&_=${new Date().getTime()}`
   const res = await fetch(url)
-  if (!res.ok) throw new Error('Fetch failed!')
+  if (!res.ok) throw new Error(`Fetch failed! ${roomKey}`)
   const data = await res.json()
   return data
 }
