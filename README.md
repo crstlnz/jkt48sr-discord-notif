@@ -20,3 +20,6 @@ $ Provide DISCORD_TOKEN on .env
 $ Add NODE_ENV=development for testing random live if no member live
 $ npm start
 ```
+
+## Preview
+![alt text](https://res.cloudinary.com/haymzm4wp/image/upload/s--D6eLNEF3--/v1695312989/assets/img/srembed_ggdojf.jpg)
