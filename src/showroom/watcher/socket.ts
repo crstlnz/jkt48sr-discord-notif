@@ -2,8 +2,8 @@ import type { ClientRequestArgs } from 'node:http'
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
 import WebSocket from 'ws'
-import config from '@root/src/config'
 import { getIsLive } from '../api'
+import config from '@/config'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type WatcherSocketEvents = {

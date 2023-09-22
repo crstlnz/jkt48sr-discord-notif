@@ -1,6 +1,6 @@
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
-import config from '@root/src/config'
+import config from '@/config'
 import { getOnlives } from '../api'
 import member from '../../assets/member.json'
 

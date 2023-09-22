@@ -1,9 +1,9 @@
 import type { BaseMessageOptions, MessageCreateOptions, MessagePayload } from 'discord.js'
 import { Message, PermissionFlagsBits, TextChannel } from 'discord.js'
-import config from '@root/src/config'
 import { sleep } from '../../utils/sleep'
-import client from '../../discord'
+import client from '../../discordClient'
 import type WatcherData from './core'
+import config from '@/config'
 
 const devGuilds = config.discord.specific_guilds || []
 const channelName = config.discord.channel_name.toLowerCase()

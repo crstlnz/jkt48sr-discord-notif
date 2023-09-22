@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node .output/index.js",
-    "build": "rimraf ./.output && tsc",
+    "build": "rimraf ./.output && tsc && tsc-alias",
     "dev": "ts-node ./src/index.ts",
     "devServer": "nodemon ./dev/index.ts",
     "test": "ts-node ./dev/run.ts",
@@ -13,11 +13,11 @@
     "lint:fix": "eslint ./src --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "crstlnz",
   "license": "ISC",
   "dependencies": {
+    "discord.js": "^14.8.0",
     "dayjs": "^1.11.8",
-    "discord.js": "^14.11.0",
     "dotenv": "^16.3.1",
     "typed-emitter": "^2.1.0",
     "ws": "^8.13.0"
@@ -30,7 +30,8 @@
     "nodemon": "^3.0.1",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   }
 }

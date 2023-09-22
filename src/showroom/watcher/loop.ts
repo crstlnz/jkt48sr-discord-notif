@@ -1,4 +1,4 @@
-import config from '@root/src/config'
+import config from '@/config'
 
 class WatcherLoop {
   period: number

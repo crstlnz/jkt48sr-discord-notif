@@ -1,7 +1,6 @@
 import EventEmitter from 'node:events'
 import type { EmbedBuilder } from 'discord.js'
 import type TypedEmitter from 'typed-emitter'
-import config from '@root/src/config'
 import GiftList from './data/giftList'
 import GiftLog from './data/giftLog'
 import Penonton from './data/penonton'
@@ -10,13 +9,13 @@ import WatcherLoop from './loop'
 import WatcherMessageManager from './messages'
 import WatcherSocket from './socket'
 import Comments from './data/comments'
+import config from '@/config'
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type WatcherEvents = {
   finish: () => void
   loop: () => void
 }
 
-const srIcon = 'https://res.cloudinary.com/haymzm4wp/image/upload/v1621609174/assets/showroom/sr_icon.png'
 class WatcherData extends (EventEmitter as new () => TypedEmitter<WatcherEvents>) {
   id: number
   name: string
