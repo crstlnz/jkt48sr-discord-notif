@@ -6,8 +6,6 @@
     "start": "node .output/index.js",
     "build": "rimraf ./.output && tsc && tsc-alias",
     "dev": "ts-node ./src/index.ts",
-    "devServer": "nodemon ./dev/index.ts",
-    "test": "ts-node ./dev/run.ts",
     "nodemon": "nodemon ./src/index.ts",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
