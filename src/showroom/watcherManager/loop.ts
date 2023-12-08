@@ -1,10 +1,11 @@
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
-import config from '@/config'
 import { getOnlives } from '../api'
 import member from '../../assets/member.json'
+import { logger } from '@/utils/logger'
+import config from '@/config'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// eslint-disable-next-line ts/consistent-type-definitions
 type ShowroomLoopEvents = {
   live: (lives: Watcher.Member[]) => void
 }
@@ -46,7 +47,10 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
     try {
       this.showroomList = this.getShowroomList()
       if (process.env.NODE_ENV === 'development') {
-        const data = await getOnlives().catch(e => console.log(e))
+        const data = await getOnlives().catch((e) => {
+          logger.error(e)
+          return null
+        })
         if (data != null) {
           const rooms = (data.onlives[0]?.lives ?? []).splice(0, 2)
           for (const room of rooms) {
@@ -55,14 +59,14 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
               id: room.room_id,
               roomKey: room.room_url_key,
               roomExists: true,
-              isActive: true
+              isActive: true,
             })
           }
         }
       }
 
       if (this.showroomList?.length <= 0) {
-        console.log('Showroom List is empty!')
+        logger.error('Showroom list is empty!')
       }
     }
     catch (e) {
@@ -80,8 +84,7 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
     }
     catch (e) {
       this.failed()
-      console.log(e)
-      console.log('Fail', this.fail)
+      logger.error(e)
       if (!this.isMaintenance) {
         return this.loopInterval = setTimeout(() => {
           if (this.isActive) this.execute(loop + 1)
@@ -111,12 +114,12 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
 
   failed() {
     if (this.isMaintenance) return
-    if (this.fail < 1) console.log('Showroom Timeout!')
+    if (this.fail < 1) logger.error('Showroom Timeout!')
 
     this.fail++
     if (this.fail > this.maxFail) {
       this.isMaintenance = true
-      console.log('Showroom is under maintenance or down!')
+      logger.info('Showroom is under maintenance or down!')
     }
   }
 
@@ -124,7 +127,7 @@ class Loop extends (EventEmitter as new () => TypedEmitter<ShowroomLoopEvents>) 
     this.fail = 0
     if (!this.isMaintenance) return
     this.isMaintenance = false
-    console.log('Showroom is online!')
+    logger.info('Showroom is online!')
   }
 
   stop() {

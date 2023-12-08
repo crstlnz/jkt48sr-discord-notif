@@ -1,13 +1,15 @@
 import { Client, Events, GatewayIntentBits, Partials } from 'discord.js'
+import { logger } from './utils/logger'
+
 const client = new Client({
   intents: [
-    GatewayIntentBits.Guilds
+    GatewayIntentBits.Guilds,
   ],
-  partials: [Partials.Channel]
+  partials: [Partials.Channel],
 })
 
 client.on(Events.ClientReady, () => {
-  console.log('Bot online!')
+  logger.info('Bot online!')
 })
 
 export default client

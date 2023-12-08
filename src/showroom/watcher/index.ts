@@ -5,11 +5,18 @@ class Watcher extends WatcherData {
     super(data)
   }
 
+  catchError(e: any, is_premium: boolean) {
+    if (!is_premium) {
+      console.error(e)
+    }
+  }
+
   async init() {
-    await this.giftList.update().catch(console.error)
-    await this.giftLog.update().catch(console.error)
-    await this.comments.update().catch(console.error)
+    await this.giftList.update().catch(e => this.catchError(e, this.is_premium))
+    await this.giftLog.update().catch(e => this.catchError(e, this.is_premium))
+    await this.comments.update().catch(e => this.catchError(e, this.is_premium))
     await this.messages.init().catch(console.error)
+
     this.socket.create()
     this.socket.on('finish', () => {
       this.finish()
@@ -23,7 +30,7 @@ class Watcher extends WatcherData {
     })
 
     this.loop.onLoop(async (loop) => {
-      if (loop % 10 === 0) await this.giftList.update().catch(console.error)
+      if (loop % 10 === 0) await this.giftList.update().catch(e => this.catchError(e, this.is_premium))
       await this.penonton.update().catch(console.error)
       if (this.isActive) return true
       return false

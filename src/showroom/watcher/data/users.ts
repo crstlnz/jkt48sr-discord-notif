@@ -14,7 +14,7 @@ class Users extends Map<number, Watcher.User> {
         user_id: user.user_id,
         name: user.name,
         point: user.point ? user.point : 0,
-        image: user.image ? user.image : ''
+        image: user.image ? user.image : '',
       })
     }
     else {
@@ -34,7 +34,7 @@ class Users extends Map<number, Watcher.User> {
   getAvatarId(str: string) {
     const matches = str.match(/avatar\/(\d+)\.png/)
     if (matches) {
-      return parseInt(matches[1])
+      return Number.parseInt(matches[1])
     }
     else {
       return 1

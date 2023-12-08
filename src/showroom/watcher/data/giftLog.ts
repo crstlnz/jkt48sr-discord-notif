@@ -2,6 +2,7 @@ import { getGiftLog } from '../../api'
 import type WatcherData from '../core'
 import { convertToMilliseconds } from '../../../utils'
 import { sleep } from '../../../utils/sleep'
+import { logger } from '@/utils/logger'
 
 class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
   ctx: WatcherData
@@ -23,7 +24,7 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
   }
 
   getTop() {
-    const userPoints = new Map<number, { point: number; name: string }>()
+    const userPoints = new Map<number, { point: number, name: string }>()
     let total = 0
     for (const { user_id, gift_id, num, name } of this) {
       const gift = this.ctx.giftList.get(gift_id)
@@ -31,7 +32,7 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
       total += gift.point * num
       userPoints.set(user_id, {
         point: (userPoints.get(user_id)?.point || 0) + gift.point * num,
-        name
+        name,
       })
     }
     const data = [...userPoints.values()].sort((a, b) => b.point - a.point).slice(0, 10)
@@ -45,7 +46,12 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
 
   async update(after?: Date | string | number) {
     const date = after ? new Date(after) : null
-    let data = await this.fetch().catch(e => console.log(e))
+    let data = await this.fetch().catch((e) => {
+      if (!this.ctx.is_premium) {
+        logger.error(e)
+      }
+      return null
+    })
     if (!data) return
     if (date) data = data.filter(i => convertToMilliseconds(i.created_at) > date.getTime())
     for (const gift of data) {
@@ -64,7 +70,7 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
         gifts.push({
           ...gift,
           free: giftData?.free ?? true,
-          point: giftData?.point ?? 0
+          point: giftData?.point ?? 0,
         })
       }
       else {
@@ -73,7 +79,7 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
     }
 
     if (missing.length) {
-      console.log('Ada gift yang missing', missing)
+      logger.error('Missing gifts $s', missing)
       if (retry < 3) {
         await sleep(500)
         return await this.getAllGifts(gifts, missing, (retry + 1))
@@ -83,7 +89,7 @@ class GiftLog extends Array<ShowroomAPI.GiftLogItem> {
           gifts.push({
             ...gift,
             free: true,
-            point: 0
+            point: 0,
           })
         }
       }

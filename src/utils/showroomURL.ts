@@ -11,5 +11,5 @@ export default {
   fansProfileURL: (userId: string | number) => `https://www.showroom-live.com/user/profile?user_id=${userId}`,
   cloudinaryURL: 'https://res.cloudinary.com/haymzm4wp/image/upload/',
   screenshotURL: (folder: string, id: string, format: string) =>
-  `https://res.cloudinary.com/haymzm4wp/image/upload/${folder?.startsWith('/') ? '' : '/'}${folder}/${id}.${format}`
+  `https://res.cloudinary.com/haymzm4wp/image/upload/${folder?.startsWith('/') ? '' : '/'}${folder}/${id}.${format}`,
 }

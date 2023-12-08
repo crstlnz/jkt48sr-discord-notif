@@ -38,7 +38,8 @@ class WatcherMessageManager {
   }
 
   async send(
-    options: string | MessagePayload | BaseMessageOptions): Promise<SRMessage[]> {
+    options: string | MessagePayload | BaseMessageOptions,
+  ): Promise<SRMessage[]> {
     const result: SRMessage[] = []
     if (!this.messages?.length) {
       const channels = this.getChannels()
@@ -93,9 +94,9 @@ class WatcherMessageManager {
       const channel = guild.channels.cache.find(
         c =>
           c.name.toLowerCase() === cNames
-      && c.isTextBased()
-      && c instanceof TextChannel
-      && (guild.members.me ? c.permissionsFor(guild.members.me).has(PermissionFlagsBits.SendMessages) : false)
+          && c.isTextBased()
+          && c instanceof TextChannel
+          && (guild.members.me ? c.permissionsFor(guild.members.me).has(PermissionFlagsBits.SendMessages) : false),
       )
 
       if (channel) channels.push(channel as TextChannel)

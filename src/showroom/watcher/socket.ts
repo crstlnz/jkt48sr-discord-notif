@@ -2,10 +2,11 @@ import type { ClientRequestArgs } from 'node:http'
 import EventEmitter from 'node:events'
 import type TypedEmitter from 'typed-emitter'
 import WebSocket from 'ws'
-import { getIsLive } from '../api'
+import { getIsLive, getOnlives } from '../api'
+import { logger } from '@/utils/logger'
 import config from '@/config'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+// eslint-disable-next-line ts/consistent-type-definitions
 type WatcherSocketEvents = {
   comment: (comment: Watcher.Comment) => void
   gift: (gift: ShowroomAPI.GiftLogItem) => void
@@ -33,7 +34,7 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
     this.refreshNoActivityTimeout()
     const socket = new WebSocket(`wss://${this.host}`, this.options)
     socket.on('open', () => {
-      console.log(`${this.data.name} Socket Opened!`)
+      logger.info(`Socket open ${this.data.name}`)
       this.remove()
       this.socket = socket
       this.socket.send(`SUB\t${this.key}`)
@@ -48,19 +49,19 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
           const msg = message.split('\t')[2]
           if (!msg) return
           const json = JSON.parse(msg)
-          const code = parseInt(json.t, 10)
+          const code = Number.parseInt(json.t, 10)
           // detail number code on wlerin app : https://github.com/wlerin/showroom/blob/4f23efcc2329e3888e619251f8cdcd5c446850fe/showroom/comments.py
           switch (code) {
             case 1 :
               // comment
               // skip when user counting for 50 (for points)
-              if (!Number.isNaN(json.cm) && parseInt(json.cm) <= 50) break
+              if (!Number.isNaN(json.cm) && Number.parseInt(json.cm) <= 50) break
               this.emit('comment', {
                 user_id: json.u,
                 created_at: json.created_at,
                 avatar_id: json.av,
                 name: json.ac ?? '',
-                comment: json.cm
+                comment: json.cm,
               })
               break
             case 2:
@@ -76,7 +77,7 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
                 ua: json.ua,
                 avatar_id: json.av,
                 aft: json.aft,
-                image2: ''
+                image2: '',
               })
               break
             case 101:
@@ -90,20 +91,20 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
         }
       }
       catch (e) {
-        if (e instanceof Error && e.message !== 'Unexpected end of JSON input') console.log('Error on message : ', e.message)
+        if (e instanceof Error && e.message !== 'Unexpected end of JSON input') logger.error('Error on message : %s', e.message)
       }
     })
 
     socket.on('close', async (code, reason) => {
       if (code === 1000 && reason.toString() === 'Closing socket because destroy') return
-      console.log(`${this.data.name} closed code : ${code}${reason ? `, Reason : ${reason}` : ''}!`)
-      const isLive = await getIsLive(this.data.id)
-      if (isLive?.ok) return this.refreshSocket()
+      logger.error(`${this.data.name} closed code : ${code}${reason ? `, Reason : ${reason}` : ''}!`)
+      const isLive = await this.checkIsLive(true).catch(_ => false)
+      if (isLive) return this.refreshSocket()
       this.emit('finish')
     })
 
     socket.on('error', async (error) => {
-      if (error.message !== 'Invalid WebSocket frame: invalid UTF-8 sequence') console.log('SOCKET ON ERROR', error)
+      if (error.message !== 'Invalid WebSocket frame: invalid UTF-8 sequence') logger.error('SOCKET ON ERROR $s', error)
     })
 
     socket.on('unexpected-response', () => {
@@ -112,6 +113,30 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
 
     socket.onerror = (error) => {
       console.error(error)
+    }
+  }
+
+  async checkIsLive(skip_premium = false): Promise<boolean> {
+    try {
+      const isLive = await getIsLive(this.data.id)
+      return isLive.ok === true || isLive.ok === 1
+    }
+    catch (e) {
+      if (this.data.is_premium) {
+        if (skip_premium) return false
+        const onlives = await getOnlives()
+        const allLive = onlives.onlives.reduce<ShowroomAPI.OnlivesRoom[]>((a, b) => [...a, ...b.lives], [])
+        const data = allLive.find(i => i.room_id === this.data.id)
+        if (data) {
+          this.host = onlives.bcsvr_host
+          this.key = data.bcsvr_key
+          return true
+        }
+        else {
+          return false
+        }
+      }
+      throw e
     }
   }
 
@@ -134,12 +159,13 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
     this.clearTimeout()
     this.destroy()
     this.create()
+    this.checkIsLive()
   }
 
   refreshNoMessageTimeout() {
     clearTimeout(this.activityTimeout)
     this.activityTimeout = setTimeout(() => {
-      console.log(`${this.data?.name} no activity, refreshing socket...`)
+      logger.info(`${this.data?.name} no activity, refreshing socket...`)
       this.refreshSocket()
     }, config.socket.no_activity_refresh)
   }
@@ -150,7 +176,7 @@ class WatcherSocket extends (EventEmitter as new () => TypedEmitter<WatcherSocke
     this.socket?.send('PING')
     this.pingTimeout = setTimeout(() => {
       if (!this.pingAnswered) {
-        console.log(`${this.data?.name} ping timeout, refreshing socket...`)
+        logger.info(`${this.data?.name} ping timeout, refreshing socket...`)
         this.refreshSocket()
         return
       }

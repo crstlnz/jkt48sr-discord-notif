@@ -1,9 +1,12 @@
 import { getGiftList } from '../../api'
+import type WatcherData from '../core'
 
 class GiftList extends Map<number, ShowroomAPI.Gift> {
   roomId: number
-  constructor(roomId: number, gift_list?: ShowroomAPI.Gift[]) {
+  ctx: WatcherData
+  constructor(ctx: WatcherData, roomId: number, gift_list?: ShowroomAPI.Gift[]) {
     super((gift_list ?? []).map(i => [i.gift_id, i]))
+    this.ctx = ctx
     this.roomId = roomId
   }
 
@@ -17,7 +20,7 @@ class GiftList extends Map<number, ShowroomAPI.Gift> {
 
   async update() {
     const data = await getGiftList(this.roomId).catch((e) => {
-      console.error(e)
+      if (!this.ctx.is_premium) { console.error(e) }
       return null
     })
 

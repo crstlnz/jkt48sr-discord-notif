@@ -1,317 +1,317 @@
 [
-    {
-        "id": 318232,
-        "name": "Lulu /ルル （JKT48）",
-        "roomKey": "JKT48_Lulu",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318239,
-        "name": "Adel/アデル（JKT48）",
-        "roomKey": "JKT48_Adel",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318118,
-        "name": "Eli/エリ（JKT48）",
-        "roomKey": "JKT48_Eli",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318224,
-        "name": "Flora/フロラ（JKT48）",
-        "roomKey": "JKT48_Flora",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318218,
-        "name": "Oniel/オニエル（JKT48）",
-        "roomKey": "JKT48_Oniel",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318112,
-        "name": "Christy/クリスティー（JKT48）",
-        "roomKey": "JKT48_Christy",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318208,
-        "name": "Gracia/グラシア（JKT48）",
-        "roomKey": "JKT48_Gracia",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318210,
-        "name": "Ashel /アシェル（JKT48）",
-        "roomKey": "JKT48_Ashel",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318219,
-        "name": "Dey /デイ（JKT48）",
-        "roomKey": "JKT48_Dey",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318228,
-        "name": "Jessi/ジェシ（JKT48）",
-        "roomKey": "JKT48_Jessi",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318230,
-        "name": "Kathrina/カトリナ（JKT48）",
-        "roomKey": "JKT48_Kathrina",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 317739,
-        "name": "Sisca/シスカ（JKT48）",
-        "roomKey": "JKT48_Sisca",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318207,
-        "name": "Shani/シャニ（JKT48）",
-        "roomKey": "JKT48_Shani",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 317727,
-        "name": "Zee/ジー（JKT48）",
-        "roomKey": "JKT48_Zee",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318204,
-        "name": "Muthe/ムテ（JKT48）",
-        "roomKey": "JKT48_Muthe",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318229,
-        "name": "Jesslyn/ジェスリン（JKT48）",
-        "roomKey": "JKT48_Jesslyn",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318223,
-        "name": "Fiony /フィオニー（JKT48）",
-        "roomKey": "JKT48_Fiony",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318117,
-        "name": "Gita/ギタ（JKT48）",
-        "roomKey": "JKT48_Gita",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 332503,
-        "name": "JKT48 Official SHOWROOM",
-        "roomKey": "officialJKT48",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318233,
-        "name": "Marsha/マーシャ（JKT48）",
-        "roomKey": "JKT48_Marsha",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318227,
-        "name": "Indah/インダー（JKT48）",
-        "roomKey": "JKT48_Indah",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318225,
-        "name": "Freya/フレヤ（JKT48）",
-        "roomKey": "JKT48_Freya",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318209,
-        "name": "Chika/チカ（JKT48）",
-        "roomKey": "JKT48_Chika",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 317738,
-        "name": "Feni/フェニ（JKT48）",
-        "roomKey": "JKT48_Feni",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 318222,
-        "name": "Olla/オラ（JKT48）",
-        "roomKey": "JKT48_Olla",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400717,
-        "name": "Lyn /リーン（JKT48）",
-        "roomKey": "JKT48_Lyn",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400715,
-        "name": "Ella /エラ（JKT48）",
-        "roomKey": "JKT48_Ella",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400710,
-        "name": "Amanda/アマンダ（JKT48）",
-        "roomKey": "JKT48_Amanda",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400718,
-        "name": "Raisha /ライシャ（JKT48）",
-        "roomKey": "JKT48_Raisha",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400716,
-        "name": "Indira /インディラ（JKT48）",
-        "roomKey": "JKT48_Indira",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400713,
-        "name": "Lia /リア（JKT48）",
-        "roomKey": "JKT48_Lia",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 400714,
-        "name": "Callie /カリー（JKT48）",
-        "roomKey": "JKT48_Callie",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461451,
-        "name": "Alya /アリア（JKT48）",
-        "roomKey": "JKT48_Alya",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461452,
-        "name": "Anindya /アニンディア（JKT48）",
-        "roomKey": "JKT48_Anindya",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461454,
-        "name": "Cathy/キャシー（JKT48）",
-        "roomKey": "JKT48_Cathy",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461475,
-        "name": "Elin /エリン（JKT48）",
-        "roomKey": "JKT48_Elin",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461458,
-        "name": "Chelsea /チェルシー（JKT48）",
-        "roomKey": "JKT48_Chelsea",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461463,
-        "name": "Cynthia /シンティア（JKT48）",
-        "roomKey": "JKT48_Cynthia",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461466,
-        "name": "Danella /ダネラ（JKT48）",
-        "roomKey": "JKT48_Danella",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461465,
-        "name": "Daisy /デイシー（JKT48）",
-        "roomKey": "JKT48_Daisy",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461476,
-        "name": "Gendis /ゲンディス（JKT48）",
-        "roomKey": "JKT48_Gendis",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461478,
-        "name": "Gracie /グラシー（JKT48）",
-        "roomKey": "JKT48_Gracie",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461479,
-        "name": "Greesel /グリーセル（JKT48）",
-        "roomKey": "JKT48_Greesel",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461480,
-        "name": "Jeane /ジーン（JKT48）",
-        "roomKey": "JKT48_Jeane",
-        "roomExists": true,
-        "isActive": true
-    },
-    {
-        "id": 461481,
-        "name": "Michie /ミチー（JKT48）",
-        "roomKey": "JKT48_Michie",
-        "roomExists": true,
-        "isActive": true
-    }
+  {
+    "id": 318232,
+    "name": "Lulu /ルル （JKT48）",
+    "roomKey": "JKT48_Lulu",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318239,
+    "name": "Adel/アデル（JKT48）",
+    "roomKey": "JKT48_Adel",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318118,
+    "name": "Eli/エリ（JKT48）",
+    "roomKey": "JKT48_Eli",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318224,
+    "name": "Flora/フロラ（JKT48）",
+    "roomKey": "JKT48_Flora",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318218,
+    "name": "Oniel/オニエル（JKT48）",
+    "roomKey": "JKT48_Oniel",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318112,
+    "name": "Christy/クリスティー（JKT48）",
+    "roomKey": "JKT48_Christy",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318208,
+    "name": "Gracia/グラシア（JKT48）",
+    "roomKey": "JKT48_Gracia",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318210,
+    "name": "Ashel /アシェル（JKT48）",
+    "roomKey": "JKT48_Ashel",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318219,
+    "name": "Dey /デイ（JKT48）",
+    "roomKey": "JKT48_Dey",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318228,
+    "name": "Jessi/ジェシ（JKT48）",
+    "roomKey": "JKT48_Jessi",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318230,
+    "name": "Kathrina/カトリナ（JKT48）",
+    "roomKey": "JKT48_Kathrina",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 317739,
+    "name": "Sisca/シスカ（JKT48）",
+    "roomKey": "JKT48_Sisca",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318207,
+    "name": "Shani/シャニ（JKT48）",
+    "roomKey": "JKT48_Shani",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 317727,
+    "name": "Zee/ジー（JKT48）",
+    "roomKey": "JKT48_Zee",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318204,
+    "name": "Muthe/ムテ（JKT48）",
+    "roomKey": "JKT48_Muthe",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318229,
+    "name": "Jesslyn/ジェスリン（JKT48）",
+    "roomKey": "JKT48_Jesslyn",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318223,
+    "name": "Fiony /フィオニー（JKT48）",
+    "roomKey": "JKT48_Fiony",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318117,
+    "name": "Gita/ギタ（JKT48）",
+    "roomKey": "JKT48_Gita",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 332503,
+    "name": "JKT48 Official SHOWROOM",
+    "roomKey": "officialJKT48",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318233,
+    "name": "Marsha/マーシャ（JKT48）",
+    "roomKey": "JKT48_Marsha",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318227,
+    "name": "Indah/インダー（JKT48）",
+    "roomKey": "JKT48_Indah",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318225,
+    "name": "Freya/フレヤ（JKT48）",
+    "roomKey": "JKT48_Freya",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318209,
+    "name": "Chika/チカ（JKT48）",
+    "roomKey": "JKT48_Chika",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 317738,
+    "name": "Feni/フェニ（JKT48）",
+    "roomKey": "JKT48_Feni",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 318222,
+    "name": "Olla/オラ（JKT48）",
+    "roomKey": "JKT48_Olla",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400717,
+    "name": "Lyn /リーン（JKT48）",
+    "roomKey": "JKT48_Lyn",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400715,
+    "name": "Ella /エラ（JKT48）",
+    "roomKey": "JKT48_Ella",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400710,
+    "name": "Amanda/アマンダ（JKT48）",
+    "roomKey": "JKT48_Amanda",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400718,
+    "name": "Raisha /ライシャ（JKT48）",
+    "roomKey": "JKT48_Raisha",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400716,
+    "name": "Indira /インディラ（JKT48）",
+    "roomKey": "JKT48_Indira",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400713,
+    "name": "Lia /リア（JKT48）",
+    "roomKey": "JKT48_Lia",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 400714,
+    "name": "Callie /カリー（JKT48）",
+    "roomKey": "JKT48_Callie",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461451,
+    "name": "Alya /アリア（JKT48）",
+    "roomKey": "JKT48_Alya",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461452,
+    "name": "Anindya /アニンディア（JKT48）",
+    "roomKey": "JKT48_Anindya",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461454,
+    "name": "Cathy/キャシー（JKT48）",
+    "roomKey": "JKT48_Cathy",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461475,
+    "name": "Elin /エリン（JKT48）",
+    "roomKey": "JKT48_Elin",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461458,
+    "name": "Chelsea /チェルシー（JKT48）",
+    "roomKey": "JKT48_Chelsea",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461463,
+    "name": "Cynthia /シンティア（JKT48）",
+    "roomKey": "JKT48_Cynthia",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461466,
+    "name": "Danella /ダネラ（JKT48）",
+    "roomKey": "JKT48_Danella",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461465,
+    "name": "Daisy /デイシー（JKT48）",
+    "roomKey": "JKT48_Daisy",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461476,
+    "name": "Gendis /ゲンディス（JKT48）",
+    "roomKey": "JKT48_Gendis",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461478,
+    "name": "Gracie /グラシー（JKT48）",
+    "roomKey": "JKT48_Gracie",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461479,
+    "name": "Greesel /グリーセル（JKT48）",
+    "roomKey": "JKT48_Greesel",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461480,
+    "name": "Jeane /ジーン（JKT48）",
+    "roomKey": "JKT48_Jeane",
+    "roomExists": true,
+    "isActive": true
+  },
+  {
+    "id": 461481,
+    "name": "Michie /ミチー（JKT48）",
+    "roomKey": "JKT48_Michie",
+    "roomExists": true,
+    "isActive": true
+  }
 ]

@@ -16,6 +16,7 @@ $ npm build
 Create .env file on root folder and add your discord bot token
 ```properties
 DISCORD_TOKEN=your_bot_token
+SR_ID=showroom_token #for watch premium live
 NODE_ENV=development #for using random live if no jkt48 members are live
 ```
 

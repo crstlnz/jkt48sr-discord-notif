@@ -38,7 +38,7 @@ class Comments extends Array<Watcher.Comment> {
         avatar_id: comment.avatar_id,
         name: comment.name,
         comment: comment.comment,
-        created_at: comment.created_at
+        created_at: comment.created_at,
       })
     }
   }

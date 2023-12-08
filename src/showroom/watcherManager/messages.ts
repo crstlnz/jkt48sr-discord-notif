@@ -1,6 +1,7 @@
 import { sleep } from '../../utils/sleep'
 import type Watcher from '../watcher'
 import type ShowroomWatcherManager from '.'
+
 class SRMessageManager {
   ctx: ShowroomWatcherManager
   loopInterval?: NodeJS.Timeout
@@ -11,7 +12,7 @@ class SRMessageManager {
   async add(watcher: Watcher) {
     try {
       await watcher.messages.send({
-        embeds: [watcher.generateMessage()]
+        embeds: [watcher.generateMessage()],
       })
     }
     catch (e) {
@@ -36,7 +37,7 @@ class SRMessageManager {
     if (this.loopInterval) clearTimeout(this.loopInterval)
     for (const watcher of this.ctx.values()) {
       await watcher.messages.send({
-        embeds: [watcher.generateMessage()]
+        embeds: [watcher.generateMessage()],
       })
     }
     this.loopInterval = setTimeout(() => {
