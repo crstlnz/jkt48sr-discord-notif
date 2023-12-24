@@ -22,8 +22,6 @@
     "dayjs": "^1.11.8",
     "discord.js": "^14.8.0",
     "dotenv": "^16.3.1",
-    "pino": "^8.16.2",
-    "pino-pretty": "^10.2.3",
     "typed-emitter": "^2.1.0",
     "winston": "^3.11.0",
     "winston-error-format": "^3.0.0",
