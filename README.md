@@ -27,7 +27,7 @@ $ npm start
 ```
 
 ## Development
-Use ```npm run dev``` or ```npm run nodemon``` for development
+Use ```npm run dev``` for development
 
 ## Preview
 ![alt text](https://res.cloudinary.com/haymzm4wp/image/upload/s--D6eLNEF3--/v1695312989/assets/img/srembed_ggdojf.jpg)
