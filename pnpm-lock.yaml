@@ -29,7 +29,7 @@ devDependencies:
     specifier: ^2.2.2
     version: 2.2.2(eslint@8.55.0)(typescript@5.3.2)
   '@types/node':
-    specifier: ^18.15.5
+    specifier: ^18.16.18
     version: 18.16.18
   '@types/ws':
     specifier: ^8.5.10

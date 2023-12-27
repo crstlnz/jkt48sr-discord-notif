@@ -9,7 +9,7 @@ A step by step guide that will tell you how to get the development environment u
 $ git clone https://github.com/crstlnz/jkt48sr-discord-notif.git
 $ cd jkt48sr-discord-notif
 $ npm i
-$ npm build
+$ npm run build
 ```
 
 ## Environtment Variables
