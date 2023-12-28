@@ -16,7 +16,8 @@ const config: ShowroomWatcherOptions = {
     no_activity_refresh: 60000,
   },
   discord: {
-    channel_name: 'sr-test', // if NODE_ENV=development channel name will be suffixed with "-dev"
+    channel: 'showroom',
+    dev_channel: 'showroom-dev', // if empty channel_name will be used
     specific_guilds: [],
   },
   message: {

@@ -11,7 +11,8 @@ interface ShowroomWatcherOptions {
     no_activity_refresh: number
   }
   discord: {
-    channel_name: string
+    channel: string
+    dev_channel?: string
     specific_guilds?: string[]
   }
   message: {

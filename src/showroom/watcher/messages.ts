@@ -6,7 +6,8 @@ import type WatcherData from './core'
 import config from '@/config'
 
 const devGuilds = config.discord.specific_guilds || []
-const channelName = config.discord.channel_name.toLowerCase()
+const channelName = config.discord.channel.toLowerCase()
+const devChannelName = config.discord.dev_channel?.toLowerCase() || channelName
 class WatcherMessageManager {
   messages: SRMessage[]
   temp?: Watcher.Message[]
@@ -61,6 +62,7 @@ class WatcherMessageManager {
     if (!this.messages?.length) {
       return []
     }
+
     const result: SRMessage[] = []
     for (const msg of this.messages) {
       const message = await msg.update(options)
@@ -85,7 +87,7 @@ class WatcherMessageManager {
 
   getChannels(): TextChannel[] {
     if (!client.isReady) return []
-    const cNames = process.env.NODE_ENV === 'development' ? `${channelName}-dev` : channelName
+    const cNames = process.env.NODE_ENV === 'development' ? devChannelName : channelName
     const channels: TextChannel[] = []
     const guilds = client.guilds.cache
 
